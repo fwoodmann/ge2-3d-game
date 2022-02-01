@@ -8,11 +8,12 @@ public class Movement: MonoBehaviour {
 
     [SerializeField] Rigidbody rb;
 
-    [HideInInspector] public float playerSpeed;
+    public float playerSpeed;
 
     public void Move(Vector3 horizontalInput, Vector3 verticalInput)
     {
         Vector3 move = (horizontalInput + verticalInput).normalized * playerSpeed;
+       // Debug.Log(move);
         rb.AddForce(move);
     }
 
