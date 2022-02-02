@@ -19,16 +19,17 @@ public class Movement: MonoBehaviour {
        // Debug.Log(move);
         rb.AddForce(move);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectables"))
         {
-            ScoreManager.instance.AddScore(collectableValue);
-            //Debug.Log("Score");
+            //ScoreManager.instance.AddScore(collectableValue);
+            Debug.Log("Score");
             Destroy(other.gameObject);
         }
         if (other.CompareTag("Enemies")){
             SceneManager.LoadScene(2);  //return to menu after player dies
         }
+        Debug.Log("Score 11");
     }
 }
