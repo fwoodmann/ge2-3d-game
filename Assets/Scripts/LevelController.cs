@@ -30,10 +30,14 @@ public class LevelController : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;
+        pauseMenuUI.SetActive(false);
     }
 
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        pauseMenuUI.SetActive(false);
     }
 }
