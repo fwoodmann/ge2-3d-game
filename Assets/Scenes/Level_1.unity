@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcba4d47e70a92e40be3667736b2b12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 0}
+  platform: {fileID: 387648039}
   rotationSpeed: 10
   rotationAxis: Y
   moveAxis: 
@@ -3658,7 +3658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcba4d47e70a92e40be3667736b2b12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 0}
+  platform: {fileID: 1902794372}
   rotationSpeed: 10
   rotationAxis: Y
   moveAxis: 
