@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 public class Movement: MonoBehaviour {
     // This could be used to move the Stage instead of the Player
@@ -8,7 +10,8 @@ public class Movement: MonoBehaviour {
 
     [SerializeField] Rigidbody rb;
 
-    public float playerSpeed;
+    [SerializeField] private int collectableValue = 0;
+    [HideInInspector] public float playerSpeed;
 
     public void Move(Vector3 horizontalInput, Vector3 verticalInput)
     {
@@ -16,5 +19,16 @@ public class Movement: MonoBehaviour {
        // Debug.Log(move);
         rb.AddForce(move);
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Collectables"))
+        {
+            ScoreManager.instance.AddScore(collectableValue);
+            //Debug.Log("Score");
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Enemies")){
+            SceneManager.LoadScene(2);  //return to menu after player dies
+        }
+    }
 }
