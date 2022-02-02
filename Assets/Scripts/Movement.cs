@@ -12,18 +12,43 @@ public class Movement: MonoBehaviour {
 
     [SerializeField] private int collectableValue = 0;
     [HideInInspector] public float playerSpeed;
+    public bool gyroEnabled;
+    private Gyroscope gyro;
+    private Vector3 move;
+    private Vector3 tilt;
+    private void Start()
+    {
+        gyroEnabled = EnableGyro();
+    }
+
+    private bool EnableGyro()
+    {
+        gyro = Input.gyro;
+        gyro.enabled = true;
+        return true;
+    }
+
 
     public void Move(Vector3 horizontalInput, Vector3 verticalInput)
     {
-        Vector3 move = (horizontalInput + verticalInput).normalized * playerSpeed;
-       // Debug.Log(move);
-        rb.AddForce(move);
+        if(SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            move = (horizontalInput + verticalInput).normalized * playerSpeed;
+        }
+        else
+        {
+            tilt.z = Input.acceleration.y;
+            tilt.x = Input.acceleration.x;
+            rb.AddForce(tilt*playerSpeed*Time.deltaTime);
+        }
+        // Debug.Log(move);
+       rb.AddForce(move);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectables"))
         {
-            //ScoreManager.instance.AddScore(collectableValue);
+            ScoreManager.instance.AddScore(collectableValue);
             Debug.Log("Score");
             Destroy(other.gameObject);
         }
