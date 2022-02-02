@@ -11,7 +11,7 @@ public class ObstacleController : MonoBehaviour
 
     public string moveAxis;
     public float moveSpeed = 1;
-    Vector3 pointB = new Vector3 (0, -5, 0);
+    Vector3 pointB = new Vector3 (0, 0, 0);
     Vector3 pointA = new Vector3(0, 0, 0);
 
     // Update is called once per frame
