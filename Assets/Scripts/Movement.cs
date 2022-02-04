@@ -16,6 +16,7 @@ public class Movement: MonoBehaviour {
     private Gyroscope gyro;
     private Vector3 move;
     private Vector3 tilt;
+    
     private void Start()
     {
         gyroEnabled = EnableGyro();
@@ -49,12 +50,12 @@ public class Movement: MonoBehaviour {
         if (other.CompareTag("Collectables"))
         {
             ScoreManager.instance.AddScore(collectableValue);
-            Debug.Log("Score");
+            //Debug.Log("Score");
             Destroy(other.gameObject);
         }
         if (other.CompareTag("Enemies")){
             SceneManager.LoadScene(2);  //return to menu after player dies
         }
-        Debug.Log("Score 11");
+        //Debug.Log("Score 11");
     }
 }
