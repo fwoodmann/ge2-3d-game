@@ -11,7 +11,7 @@ public class Movement: MonoBehaviour {
     [SerializeField] Rigidbody rb;
 
     [SerializeField] private int collectableValue = 0;
-    [HideInInspector] public float playerSpeed;
+    public float playerSpeed;
 
     public void Move(Vector3 horizontalInput, Vector3 verticalInput)
     {
