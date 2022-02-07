@@ -1,19 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 // https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
-    public Text timeText;
+    public TextMeshProUGUI timeText;
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public int getTimeRemaining()
+    {
+        return (int) timeRemaining;
+    }
     void Update()
     {
         if (timerIsRunning)

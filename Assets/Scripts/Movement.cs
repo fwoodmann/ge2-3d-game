@@ -53,9 +53,6 @@ public class Movement: MonoBehaviour {
             //Debug.Log("Score");
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Enemies")){
-            SceneManager.LoadScene(2);  //return to menu after player dies
-        }
         //Debug.Log("Score 11");
     }
 }
