@@ -175,6 +175,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
+      propertyPath: msg
+      value: 
+      objectReference: {fileID: 82275003}
+    - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 640475079}
+    - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
       propertyPath: deathMenuUI
       value: 
       objectReference: {fileID: 0}
@@ -182,6 +190,10 @@ PrefabInstance:
       propertyPath: pauseMenuUI
       value: 
       objectReference: {fileID: 980055138}
+    - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
+      propertyPath: pauseUIScore
+      value: 
+      objectReference: {fileID: 1952791333}
     - target: {fileID: 9205230247621879504, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
       propertyPath: m_Name
       value: DeathZone
@@ -190,8 +202,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Deathzone
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
 --- !u!1001 &37573036
 PrefabInstance:
@@ -520,7 +531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139582266}
-  m_LocalRotation: {x: 0.09106146, y: 0.7015162, z: -0.09117434, w: 0.7009067}
+  m_LocalRotation: {x: 0.09106146, y: 0.7015162, z: -0.09117433, w: 0.7009067}
   m_LocalPosition: {x: 6.76804, y: 2.216, z: 0.016098723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1115,7 +1126,6 @@ MonoBehaviour:
   rb: {fileID: 548721653}
   collectableValue: 300
   playerSpeed: 5.5
-  gyroEnabled: 0
 --- !u!54 &548721653
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2531,7 +2541,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827374377}
-  m_LocalRotation: {x: 0.10404398, y: 0.71931577, z: -0.110397644, w: 0.6779175}
+  m_LocalRotation: {x: 0.10404399, y: 0.71931577, z: -0.110397644, w: 0.6779175}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
