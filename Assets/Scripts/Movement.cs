@@ -12,39 +12,32 @@ public class Movement: MonoBehaviour {
 
     [SerializeField] private int collectableValue = 0;
     [HideInInspector] public float playerSpeed;
-    public bool gyroEnabled;
     private Gyroscope gyro;
     private Vector3 move;
     private Vector3 tilt;
-    
     private void Start()
     {
-        gyroEnabled = EnableGyro();
+        Input.gyro.enabled = true;
     }
-
-    private bool EnableGyro()
-    {
-        gyro = Input.gyro;
-        gyro.enabled = true;
-        return true;
-    }
-
 
     public void Move(Vector3 horizontalInput, Vector3 verticalInput)
     {
-        if(SystemInfo.deviceType == DeviceType.Desktop)
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
             move = (horizontalInput + verticalInput).normalized * playerSpeed;
+            rb.AddForce(move);
         }
         else
         {
-            tilt.z = Input.acceleration.y;
-            tilt.x = Input.acceleration.x;
-            rb.AddForce(tilt*playerSpeed*Time.deltaTime);
+            // TODO: depending on start position https://stackoverflow.com/questions/29898900/unity-gyroscope-default-position
+            Vector3 movement = Vector3.zero;
+            movement = new Vector3(Input.acceleration.y + 0.75f, 0.0f,
+                -Input.acceleration
+                    .x);
+            rb.AddForce(movement * playerSpeed);
         }
-        // Debug.Log(move);
-       rb.AddForce(move);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectables"))
