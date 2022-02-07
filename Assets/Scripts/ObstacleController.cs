@@ -6,13 +6,18 @@ public class ObstacleController : MonoBehaviour
 {
     [SerializeField] GameObject platform;
 
-    public float rotationSpeed = 50;    //set Rotation Speed
+    public float rotationSpeed = 50f;    //set Rotation Speed
     public string rotationAxis;         //set the rotation axis
 
-    public string moveAxis;
-    public float moveSpeed = 1;
-    Vector3 pointB = new Vector3 (0, 0, 0);
+    /*public string moveAxis;
+    public float moveSpeed;
+    Vector3 pointB = new Vector3 (0, 0.5f, 0);
     Vector3 pointA = new Vector3(0, 0, 0);
+    Vector3 startPosition;
+    void Start()
+    {
+        startPosition = platform.transform.position;
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -35,27 +40,20 @@ public class ObstacleController : MonoBehaviour
                 break;
         }
 
-        switch (moveAxis)
+      /*  switch (moveAxis)
         {
             case "Y":
-                moveObstacle();
+                // Debug.Log(currentPosition);
+                Vector3 movePositionA = startPosition + pointA;
+                Vector3 movePositionB = startPosition + pointB;
+
+                transform.position = transform.position + movePositionA;
                 break;
 
             default:
                 break;
-        } 
+        } */
 
     }
-
-    void moveObstacle()
-    {
-        Vector3 currentPosition = platform.transform.position;
-        Debug.Log(currentPosition);
-        Vector3 movePositionA = currentPosition + pointA;
-        Vector3 movePositionB = currentPosition + pointB;
-
-        transform.position = Vector3.Lerp(movePositionA, movePositionB, moveSpeed * Time.deltaTime);
-    }
-
 
 }
