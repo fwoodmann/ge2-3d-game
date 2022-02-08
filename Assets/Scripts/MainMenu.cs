@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   
+    public Slider volumeSlider;
     public void PlayGame()
     {
+        FindObjectOfType<AudioManager>().MuteSound("ButtonHit");
         SceneManager.LoadScene(1);
     }
 
@@ -24,4 +25,12 @@ public class MainMenu : MonoBehaviour
         //Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void updateVolume()
+    {
+        Debug.Log(volumeSlider.value);
+        PlayerPrefs.SetFloat("volume", volumeSlider.value);
+        Debug.Log(PlayerPrefs.GetFloat("volume"));
+    }
+
 }

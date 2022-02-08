@@ -18,11 +18,16 @@ public class LevelController : MonoBehaviour
     {
         if (other.CompareTag("Deathzone"))
         {
+            FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().MuteSound("Theme");
+
             Failed();
         }
 
         if (other.CompareTag("Finish"))
         {
+            FindObjectOfType<AudioManager>().Play("Goal");
+            FindObjectOfType<AudioManager>().MuteSound("Theme");
             ScoreManager.instance.AddScore(Timer.instance.getTimeRemaining());
             Pause();
         }
@@ -57,6 +62,8 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 1;
         pauseMenuUI.SetActive(false);
         inGameUI.SetActive(true);
+        FindObjectOfType<AudioManager>().MuteSound("Theme");
+
     }
 
     public void NextLevel()
