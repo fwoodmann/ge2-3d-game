@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         inGameUI.SetActive(false);
-        if (PlayerPrefs.GetInt("RunScore") > PlayerPrefs.GetInt("HighScore"))
+        if (PlayerPrefs.GetInt("RunScore" + SceneManager.GetActiveScene().name) > PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name))
         {
             msg.text = "New Highscore";
         }
@@ -41,7 +41,7 @@ public class LevelController : MonoBehaviour
         {
             msg.text = "You Finished";
         } 
-        pauseUIScore.text = "Your Score: " + PlayerPrefs.GetInt("RunScore");
+        pauseUIScore.text = "Your Score: " + PlayerPrefs.GetInt("RunScore" + SceneManager.GetActiveScene().name);
     }
     void Failed()
     {

@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
@@ -16,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     public void Awake()
     {
         instance = this;
-        highScore = PlayerPrefs.GetInt("HighScore");
+        highScore = PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name);
         ResetScore();
     }
 
@@ -25,7 +27,7 @@ public class ScoreManager : MonoBehaviour
         score = score + points;
         UpdateHighScore();
         scoreText.text = score.ToString();
-        PlayerPrefs.SetInt("RunScore",score);
+        PlayerPrefs.SetInt("RunScore" + SceneManager.GetActiveScene().name ,score);
     }
 
     private void UpdateHighScore()
@@ -36,7 +38,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         highScoreText.text = highScore.ToString();
-        PlayerPrefs.SetInt("HighScore",highScore);
+        PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name,highScore);
     }
 
     public void ResetScore()
@@ -45,11 +47,11 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         scoreText.text = score.ToString();
         highScoreText.text = highScore.ToString();
-        PlayerPrefs.DeleteKey("RunScore");
+        PlayerPrefs.DeleteKey("RunScore" + SceneManager.GetActiveScene().name);
     }
 
     public void ClearHighScore()
     {
-        PlayerPrefs.DeleteKey("HighScore");
+        PlayerPrefs.DeleteKey("HighScore" + SceneManager.GetActiveScene().name);
     }
 }
