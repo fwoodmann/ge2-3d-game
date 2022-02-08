@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("volume");
+    }
     public Slider volumeSlider;
     public void PlayGame()
     {
@@ -28,6 +32,7 @@ public class MainMenu : MonoBehaviour
 
     public void updateVolume()
     {
+        //PlayerPrefs.SetFloat("volume",PlayerPrefs.GetFloat("volume"));
         Debug.Log(volumeSlider.value);
         PlayerPrefs.SetFloat("volume", volumeSlider.value);
         Debug.Log(PlayerPrefs.GetFloat("volume"));

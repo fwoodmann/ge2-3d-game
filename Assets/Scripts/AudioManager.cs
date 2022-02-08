@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("Theme");
-        PlayerPrefs.SetFloat("volume", 0.1f);
     }
 
     // Update is called once per frame
