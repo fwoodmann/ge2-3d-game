@@ -24,12 +24,17 @@ public class LevelController : MonoBehaviour
         if (other.CompareTag("Deathzone"))
         {
             Failed();
+            FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().MuteSound("Theme");
         }
 
         if (other.CompareTag("Finish"))
         {
-            ScoreManager.instance.AddScore(Timer.instance.GetTimeRemaining());
+            ScoreManager.instance.AddScore(Timer.instance.GetTimeRemaining()*10);
             Pause();
+            FindObjectOfType<AudioManager>().Play("Goal");
+            FindObjectOfType<AudioManager>().MuteSound("Theme");
+
         }
     }
     
