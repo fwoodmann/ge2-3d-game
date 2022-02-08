@@ -11568,6 +11568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5377130170126291561, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5377130170126291566, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11652,6 +11656,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5377130171040320688, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377130171040320689, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 246.7791
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377130171040320689, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.2802
+      objectReference: {fileID: 0}
     - target: {fileID: 5377130171500133559, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11696,7 +11712,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1978191919 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5377130171040320688, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9057524081818872034, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
   m_PrefabInstance: {fileID: 1978191916}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

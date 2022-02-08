@@ -2486,7 +2486,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &521342644 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5377130171040320688, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9057524081818872034, guid: 9df86eb659cffcc4fb4f2cdc1543a5a1, type: 3}
   m_PrefabInstance: {fileID: 521342641}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -4974,7 +4974,6 @@ GameObject:
   - component: {fileID: 1173864872}
   - component: {fileID: 1173864871}
   - component: {fileID: 1173864870}
-  - component: {fileID: 1173864869}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4982,22 +4981,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1173864869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173864868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0454060f681be444798087438e573d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
-  inGameUI: {fileID: 0}
-  msg: {fileID: 0}
-  pauseUIScore: {fileID: 0}
 --- !u!114 &1173864870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9909,7 +9892,7 @@ PrefabInstance:
     - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
       propertyPath: msg
       value: 
-      objectReference: {fileID: 521342644}
+      objectReference: {fileID: 0}
     - target: {fileID: 4055998679322063293, guid: d6e0db4e74d9a4a4f86cebbfd48d8bcc, type: 3}
       propertyPath: inGameUI
       value: 

@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
         instance = this;
     }
 
-    public int getTimeRemaining()
+    public int GetTimeRemaining()
     {
         return (int) timeRemaining;
     }
@@ -41,6 +41,7 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                LevelController.instance.RunOutOfTime();
             }
         }
     }

@@ -14,6 +14,11 @@ public class LevelController : MonoBehaviour
     public GameObject inGameUI;
     public Text msg;
     public Text pauseUIScore;
+    public static LevelController instance;
+    public void Awake()
+    {
+        instance = this;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Deathzone"))
@@ -23,12 +28,12 @@ public class LevelController : MonoBehaviour
 
         if (other.CompareTag("Finish"))
         {
-            ScoreManager.instance.AddScore(Timer.instance.getTimeRemaining());
+            ScoreManager.instance.AddScore(Timer.instance.GetTimeRemaining());
             Pause();
         }
     }
-
-    void Pause()
+    
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
@@ -43,12 +48,19 @@ public class LevelController : MonoBehaviour
         } 
         pauseUIScore.text = "Your Score: " + PlayerPrefs.GetInt("RunScore" + SceneManager.GetActiveScene().name);
     }
-    void Failed()
+    public void Failed()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         inGameUI.SetActive(false);
         msg.text = "You Failed";
+    }
+    public void RunOutOfTime()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        inGameUI.SetActive(false);
+        msg.text = "You ran out of time";
     }
     public void Retry()
     {
@@ -61,10 +73,17 @@ public class LevelController : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Time.timeScale = 1;
-        pauseMenuUI.SetActive(false);
-        inGameUI.SetActive(true);
+        if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
+        {
+            BackToMenu();
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1;
+            pauseMenuUI.SetActive(false);
+            inGameUI.SetActive(true);
+        }
     }
 
     public void BackToMenu()
