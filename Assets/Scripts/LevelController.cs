@@ -31,6 +31,7 @@ public class LevelController : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             ScoreManager.instance.AddScore(Timer.instance.GetTimeRemaining()*10);
+            ScoreManager.instance.UpdateHighScore();
             Pause();
             FindObjectOfType<AudioManager>().Play("Goal");
             FindObjectOfType<AudioManager>().MuteSound("Theme");

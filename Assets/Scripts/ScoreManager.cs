@@ -24,12 +24,12 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int points)
     {
         score = score + points;
-        UpdateHighScore();
+        //UpdateHighScore();
         scoreText.text = score.ToString();
         PlayerPrefs.SetInt("RunScore" + SceneManager.GetActiveScene().name ,score);
     }
 
-    private void UpdateHighScore()
+    public void UpdateHighScore()
     {
         if (score > highScore)
         {
