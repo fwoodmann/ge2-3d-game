@@ -45,6 +45,7 @@ public class Movement: MonoBehaviour {
             ScoreManager.instance.AddScore(collectableValue);
             //Debug.Log("Score");
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("Collectable");
         }
         //Debug.Log("Score 11");
     }
