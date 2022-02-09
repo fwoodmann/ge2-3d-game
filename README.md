@@ -3,9 +3,7 @@
 ## Scope of the Game
 
 ### Description
- Duck is stuck 
- and has no luck
- so it says fuck
+ You play a Duck that is stuck in a Ball, your goal is to reach the finish as fast as possible while collecting all leeks.
 
 
 ### Controls
@@ -34,7 +32,11 @@
 Jump 'n' Run
 
 ### Screenshots
-<pre>In Development</pre>
+![main_menu](https://user-images.githubusercontent.com/56965143/153179184-b1ca1d3a-a260-4994-994b-b64b223d4d56.PNG)
+![Level](https://user-images.githubusercontent.com/56965143/153179210-9cc7546d-ce1e-470a-b58e-ca760d603858.PNG)
+![finish](https://user-images.githubusercontent.com/56965143/153179240-a285aeb5-31d0-4ed3-ba79-1d9a0a4c1c1a.PNG)
+![death](https://user-images.githubusercontent.com/56965143/153179230-dfd8c2ba-dcf5-450e-8f53-99f992d79a7b.PNG)
+
 
 ### Gameplay
 
