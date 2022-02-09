@@ -40,6 +40,7 @@ Jump 'n' Run
 
 ### Gameplay
 
+![output](https://user-images.githubusercontent.com/43883108/153183856-eacc9dd2-b330-4c86-8a41-102b954f82f5.gif)
 
 ## Team
 * [Florian Holzmann](https://github.com/fwoodmann)
